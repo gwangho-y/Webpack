@@ -14,12 +14,12 @@ module.exports = {
             test: /\.css$/,
             // use: ['style-loader', 'css-loader']
             use: [
-                { loader: MiniCssExtractPlugin.loader },
+                // { loader: MiniCssExtractPlugin.loader },
                 "css-loader"
             ]
         }]
     },
     plugins: [
-        new MiniCssExtractPlugin()
+        // new MiniCssExtractPlugin()
     ]
 };
