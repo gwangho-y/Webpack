@@ -68,7 +68,52 @@ getNum을 호출하면 결과는 20이 된다. app.js에서 불러 왔던 변수
   - 웹팩의 코드스플리팅 기능을 사용해서 원하는 타이밍에 모듈 로딩이 가능하다
 
 ## 웹팩 설정 파일
+=======
+### 웹팩의 주요 4가지 속성
+- Entry
+  
+    최초 진입점이자 자바스크립트 파일 경로
+              
+        // webpack.config.js
+        module.exports = {
+            entry: './src/index.js'
 
+            // 진입점은 여러곳이 될 수 있다.
+            // 진입점이 여러 곳 일 때는 SPA가 아닌 멀티페이지 어플리케이션에 적합하다.
+            entry: {
+              login: './src/LoginView.js',
+              main: './src/MainView.js'
+            }
+        }
+- Output
+    
+    웹팩을 돌리고 난 결과물의 파일 경로를 의미한다.  
+    <code>filename</code>은 반드시 지정해줘야하고, 결과물 저장될 path 속성도 같이 넣어준다.
+        
+        output: {
+          path: path.resolve(__dirname, 'build'),
+          filename: 'main.bundle.js'
+        }
+- Loader
+
+    웹팩이 웹 어플리케이션을 해설할 때 js 파일이 아닌 웹 자원들(html, css, images, font)을 변환할 수 있도록 도와주는 속성.
+    </br>엔트리 아웃풋과 다르게 <code>module</code> 이라는 이름을 사용한다.
+
+        // webpack.config.js
+            module.exports = {
+               module: {
+                 rules: []
+               }
+            } 
+  - 자세한 내용은 code-splitting 레포지토리에서 설명
+- Plugin
+  
+  웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성
+
+  - 자세한 내용은 code-splitting 레포지토리에서 설명
+
+
+### 웹팩 설정 파일
 
     package.json
 
@@ -92,4 +137,6 @@ getNum을 호출하면 결과는 20이 된다. app.js에서 불러 왔던 변수
         }
     }
 
-## mode
+### 바벨??
+https://babeljs.io/
+자바스크립트의 문법을 최대한 많은 브라우저에서 호환하게 해주는 컴파일러**

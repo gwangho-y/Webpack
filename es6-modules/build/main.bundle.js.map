@@ -1,0 +1,1 @@
+{"version":3,"file":"main.bundle.js","mappings":"mBAGAA,QAAQC,ICFGC,G","sources":["webpack://es6-modules/./js/app.js","webpack://es6-modules/./js/math.js"],"sourcesContent":["import { sum } from './math'\r\n\r\n\r\nconsole.log(sum(10,20))","export function sum(a, b) {\r\n    return a + b\r\n}"],"names":["console","log","a"],"sourceRoot":""}
